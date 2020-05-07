@@ -1,0 +1,26 @@
+{
+  "name": "inshorts-api",
+  "version": "1.0.0",
+  "description": "A Node.js wrapper around the inshorts.com website.",
+  "main": "index.js",
+  "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+      "type": "git",
+      "url": "https://github.com/NakshatraCodes/inshorts-api.git"
+  },
+  "keywords": [
+    "inshorts",
+    "news",
+    "indiannews",
+    "news",
+    "api"
+  ],
+  "author": "Nakshatra Saxena",
+  "license": "MIT",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.3",
+    "node-fetch": "^2.6.0"
+  }
+}
