@@ -38,7 +38,8 @@ function get(category,lang, callback){
 				title: $title.text(),
 				author: $author.text(),
 				content: content,
-				postedAt: createdAt
+				postedAt: createdAt,
+				sourceURL: URL
 			}
 			news.push(info);
 		});
