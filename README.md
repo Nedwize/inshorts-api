@@ -22,7 +22,7 @@ Pass category and language as parameters to this function.
 
 ## Available Categories-
  - //Leave empty for getting all news
- - national(India)
+ - national (India)
  - business
  - sports
  - world
@@ -31,7 +31,7 @@ Pass category and language as parameters to this function.
  - startup
  - entertainment
  - miscellaneous
- - hatke(unusual)
+ - hatke (unusual)
  - science
  - automobile
 
@@ -39,7 +39,13 @@ Pass category and language as parameters to this function.
 ## Availabe Languages-
  - en (English)
  - hi (Hindi)
- 
+
+Example Code Snippet
+```javascript
+inshorts.get('national', 'en' ,function(result){
+console.log(result);
+});
+```
 
 Response
 ```javascript
@@ -88,3 +94,6 @@ centres," he added. The state government will only bear the expenses of those re
     sourceURL: 'https://inshorts.com/en/read/'
   }
 ```
+## People
+
+Contact contributor [Nakshatra Saxena](https://www.linkedin.com/in/nakshatra-saxena-51825a152/)
