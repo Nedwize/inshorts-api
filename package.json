@@ -1,6 +1,6 @@
 {
   "name": "inshorts-api",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A Node.js wrapper around the inshorts.com website.",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/NakshatraCodes/inshorts-api.git"
+    "url": "git+https://github.com/NakshatraCodes/inshorts-api.git"
   },
   "keywords": [
     "inshorts",
@@ -17,7 +17,7 @@
     "news",
     "api"
   ],
-  "publishConfig": { "registry": "https://npm.pkg.github.com/" },
+  "publishConfig": { "registry": "https://npm.pkg.github.com/@nakshatracodes" },
   "author": "Nakshatra Saxena",
   "license": "MIT",
   "dependencies": {
