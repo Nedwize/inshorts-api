@@ -3,14 +3,17 @@ const fetch = require('node-fetch');
 
 
 
-function get(category,lang, callback){
+function get(options, callback){
 
-	const URL = `https://inshorts.com/${lang}/read/${category}`;
+
+	var flag = 0;
+
+	const URL = `https://inshorts.com/${options.lang}/read/${options.category}`;
 
 	return fetch(URL)
 	.then(response => response.text())
 	.then(body=>{
-		// console.log(body);
+
 		const news = [];
 		const $ = cheerio.load(body);
 		$('.news-card').each((i, element)=>{
@@ -42,10 +45,25 @@ function get(category,lang, callback){
 				sourceURL: URL
 			}
 			news.push(info);
-		});
 
-		callback(news);
-	});
+
+			if((i+1)==options.numOfResults){
+				callback(news);
+				flag=1;
+			}
+		});
+		if(!flag){
+			callback(news);
+		}
+		if(news.length<1){
+			callback({
+				errorText: 'No data was returned. Check options object.'
+			});
+		}
+	})
+	.catch(err=>{
+		callback(err);
+	})
 };
 
 module.exports.get = get;

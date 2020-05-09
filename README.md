@@ -11,14 +11,24 @@ npm install inshorts-api
 ## Usage
 Require library
 ```javascript
-var inshorts= require('inshorts-api');
+const inshorts= require('inshorts-api');
 ```
 ```javascript
-inshorts.get('category', 'language' ,function(result){
-console.log(result);
+var options = {
+  lang: 'language',
+  category: 'category',
+  numOfResults: 5
+}
+
+inshorts.get(options, function(result){
+  console.log(result);
 });
 ```
-Pass category and language as parameters to this function.
+Pass the 'options' object as a parameter to this function. Define keys lang, category and numOfResults.
+
+Note: If numOfResults is not defined, it will return 25 articles as default. Any number above 25 will also return default 25 articles.
+
+Default language is 'en'.
 
 ## Available Categories-
  - //Leave empty for getting all news
@@ -40,10 +50,16 @@ Pass category and language as parameters to this function.
  - en (English)
  - hi (Hindi)
 
-Example Code Snippet
+### Example Code Snippet
 ```javascript
-inshorts.get('national', 'en' ,function(result){
-console.log(result);
+var options = {
+  lang: 'en',
+  category: 'national'
+  numOfResults: 6
+}
+
+inshorts.get(options ,function(result){
+  console.log(result);
 });
 ```
 
