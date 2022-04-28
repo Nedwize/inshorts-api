@@ -36,13 +36,23 @@ function get(options, callback){
 			const $content = $element.find('div.news-card-content div');
 			let content = $content.text();
 				content = content.substring(0, content.indexOf('\n'));
+			
+			const $image = $element.find('div.news-card-image');
+			const imageUriString = $image['0'].attribs.style;
+			const imageUri = imageUriString.substring(imageUriString.indexOf('http'), imageUriString.length -3);
+
+			const divCardFooter = $element.find('div.news-card-footer.news-right-box');
+			const readMoreString = divCardFooter.find('div.read-more');
+			const asource = readMoreString.find('a.source')
+			const sourceUrl = asource["0"].attribs.href;
 
 			const info = {
 				title: $title.text(),
 				author: $author.text(),
 				content: content,
 				postedAt: createdAt,
-				sourceURL: URL
+				sourceURL: sourceUrl,
+				imageUri,
 			}
 			news.push(info);
 
