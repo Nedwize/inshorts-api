@@ -10,7 +10,7 @@ function get(options, callback) {
 		const news = [];
 		const $ = cheerio.load(body);
 
-		console.log($('body > div > div  div[itemscope]').length);
+		// console.log($('body > div > div  div[itemscope]').length);
 
 		$('body > div > div  div[itemscope]').each((i, element) => {
 			const $element = $(element);
