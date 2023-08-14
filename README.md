@@ -5,7 +5,7 @@ A Node.js wrapper around the inshorts.com website.
 ## Installation
 Install using npm:
 ```sh
-npm install inshorts-api
+npm install github:jacktheboss220/inshorts-api
 ```
 
 ## Usage
